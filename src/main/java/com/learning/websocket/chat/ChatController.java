@@ -11,16 +11,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin
 public class ChatController {
 
-//    @MessageMapping("/chat.sendMessage")
-//    @SendTo("/topic/public")
-//    public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
-//        return chatMessage;
-//    }
-
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
-    public String sendMessage(@Payload ChatMessage chatMessage) {
-        return "Hello, " + chatMessage.getSender() + "!";
+    public ChatMessage sendMessage(@Payload ChatMessage chatMessage) {
+        return chatMessage;
     }
 
     @MessageMapping("/chat.addUser")
